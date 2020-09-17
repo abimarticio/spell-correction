@@ -27,3 +27,13 @@ class SpellCorrection():
             else:
                 corrections[key] = values
         return corrections
+
+    def invert_dictionary(self, corrections: dict) -> dict:
+        dictionary = {}
+        for key, value in corrections.items():
+            if isinstance(value, str):
+                dictionary[value] = key
+            elif isinstance(value, list):
+                for element in value:
+                    dictionary[element] = key
+        return dictionary
