@@ -37,3 +37,7 @@ class SpellCorrection():
                 for element in value:
                     dictionary[element] = key
         return dictionary
+
+    def get_correction(self, word: str, dictionary: dict) -> str:
+        correct_word = dictionary.get(word)
+        return correct_word
