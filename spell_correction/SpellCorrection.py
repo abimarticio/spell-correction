@@ -41,3 +41,10 @@ class SpellCorrection():
     def get_correction(self, word: str, dictionary: dict) -> str:
         correct_word = dictionary.get(word)
         return correct_word
+
+    def get_batch_correction(self, words: list, dictionary: dict) -> list:
+        correct_words = []
+        for word in words:
+            correct_word = self.get_correction(word=word, dictionary=dictionary)
+            correct_words.append(correct_word)
+        return correct_words
