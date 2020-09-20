@@ -1,7 +1,7 @@
 from spell_correction import load_data, SpellCorrection
 
 def main():
-    data = load_data(filename = "spell-errors.txt")
+    data = load_data(filename = "assets/spell-errors.txt")
     data = (data[:50])
     sc = SpellCorrection(data=data)
     lines = sc.get_list()
