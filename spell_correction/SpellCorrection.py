@@ -1,5 +1,5 @@
 class SpellCorrection():
-    def __init__(self, data:str):
+    def __init__(self, data: str):
         self.data = data
 
     def get_list(self) -> list:
