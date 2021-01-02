@@ -40,7 +40,10 @@ class SpellCorrection:
                     dictionary[element] = key
         return dictionary
 
-    def get_correction(self, word: str, dictionary: dict) -> str:
+    def get_correction(self, word: str) -> str:
+        lines = self.get_list()
+        corrections = self.create_dictionary(lines=lines)
+        dictionary = self.invert_dictionary(corrections=corrections)
         correct_word = dictionary.get(word)
         return correct_word
 
