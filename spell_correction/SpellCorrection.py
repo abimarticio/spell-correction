@@ -1,6 +1,8 @@
+from spell_correction import load_data
+
 class SpellCorrection:
     def __init__(self, data: str):
-        self.data = data
+        self.data = load_data(filename=data)
 
     def get_list(self) -> list:
         data = [line.strip("\n") for line in self.data]
