@@ -1,6 +1,23 @@
+# Spell Correction Flask app
+# Copyright (C) 2021  Abigail A. Marticio
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+from .data import load_data
+
 class SpellCorrection:
     def __init__(self, data: str):
-        self.data = data
+        self.data = load_data(filename=data)
 
     def get_list(self) -> list:
         data = [line.strip("\n") for line in self.data]
@@ -38,7 +55,10 @@ class SpellCorrection:
                     dictionary[element] = key
         return dictionary
 
-    def get_correction(self, word: str, dictionary: dict) -> str:
+    def get_correction(self, word: str) -> str:
+        lines = self.get_list()
+        corrections = self.create_dictionary(lines=lines)
+        dictionary = self.invert_dictionary(corrections=corrections)
         correct_word = dictionary.get(word)
         return correct_word
 
