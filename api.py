@@ -5,7 +5,7 @@ from spell_correction import SpellCorrection
 app = Flask(__name__)
 
 
-@app.route("/spell-correction", methods=["GET])
+@app.route("/spell-correction", methods=["GET"])
 def get_correction():
   spell_correction = SpellCorrection(data="assets/spell-errors.txt")
   text = request.args.get("word, default=None)
