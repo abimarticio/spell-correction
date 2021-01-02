@@ -1,4 +1,4 @@
-from spell_correction import load_data
+from data import load_data
 
 class SpellCorrection:
     def __init__(self, data: str):
