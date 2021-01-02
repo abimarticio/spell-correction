@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/spell-correction", methods=["GET"])
 def get_correction():
   spell_correction = SpellCorrection(data="assets/spell-errors.txt")
-  text = request.args.get("word, default=None)
+  text = request.args.get("word", default=None)
   correct_text = spell_correction.get_correction(text)
   return f"{text} => {correct_text}"
   
