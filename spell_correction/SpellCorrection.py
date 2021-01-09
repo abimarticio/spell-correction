@@ -60,6 +60,19 @@ class SpellCorrection:
         return corrections
 
     def invert_dictionary(self, corrections: dict) -> dict:
+        """
+        Inverts the corrections dictionary.
+
+        Parameters
+        ----------
+        corrections: dict
+            The corrections dictionary where keys are the correct words and values are the mispelled words.
+
+        Returns
+        -------
+        dictionary: dict
+            The inverted dictionary where the keys are the mispelled words and the values are the correct words.
+        """
         dictionary = {}
         for key, value in corrections.items():
             if isinstance(value, str):
