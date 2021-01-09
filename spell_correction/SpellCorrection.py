@@ -15,6 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from .data import load_data
 
+
 class SpellCorrection:
     def __init__(self, data: str):
         self.data = load_data(filename=data)
@@ -28,6 +29,19 @@ class SpellCorrection:
         return lines
 
     def create_dictionary(self, lines: list) -> dict:
+        """
+        Creates dictionary.
+
+        Parameters
+        ----------
+        lines: list
+            The data in list.
+
+        Returns
+        -------
+        corrections: dict
+            The data in dictionary where keys are the correct words and values are the mispelled words.
+        """
         corrections = {}
         for line in lines:
             key = line[0]
