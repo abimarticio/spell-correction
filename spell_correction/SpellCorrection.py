@@ -83,6 +83,19 @@ class SpellCorrection:
         return dictionary
 
     def get_correction(self, word: str) -> str:
+        """
+        Gets the correct word.
+
+        Parameters
+        ----------
+        word: str
+            The mispelled word.
+
+        Returns
+        -------
+        str
+            The correct word.
+        """
         lines = self.get_list()
         corrections = self.create_dictionary(lines=lines)
         dictionary = self.invert_dictionary(corrections=corrections)
